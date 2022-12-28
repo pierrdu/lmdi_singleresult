@@ -1,0 +1,7 @@
+services:
+    lmdi.singleresult.listener:
+        class: lmdi\singleresult\event\listener
+        arguments:
+            - '@template'
+        tags:
+            - { name: event.listener }
