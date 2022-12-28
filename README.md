@@ -1,4 +1,4 @@
-# phpBB Singleres Extension
+# phpBB LMDI Single Result Extension
 
 ## Install
 
