@@ -33,15 +33,21 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 	return array(
-		'core.search_backend_search_after' => 'single_res1',
+		'core.search_backend_search_after' => 'single_res',
 	);
 	}
 
 
-	public function single_res1($event)
+	public function singleres($event)
 	{
 		$total_match_count = $event['total_match_count'];
-		var_dup ($total_match_count);
+		if ($total_match_count == 1)
+		{
+			$sql_where = $event['sql_where'];
+			$topic_id = (int) substr ($sql_where, 12);
+			$url = 'viewtopic.php?t=' . $topic_id;
+			header ("location: $url");
+		}
 	}
 
 
