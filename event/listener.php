@@ -33,7 +33,7 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 	return array(
-		'core.search_backend_search_after' => 'single_res',
+		'core.search_backend_search_after' => 'singleres',
 	);
 	}
 
